@@ -13,6 +13,8 @@ Demonstrate branch names and their status in the repository using actual Git com
   bug-fix-typo
 * main
   remotes/origin/HEAD -> origin/main
+  remotes/origin/bug-fix-revert
+  remotes/origin/bug-fix-typo
   remotes/origin/main
 ```
 
@@ -23,8 +25,7 @@ Demonstrate branch names and their status in the repository using actual Git com
 ### Terminal Output:
 ```
 On branch main
-Your branch is ahead of 'origin/main' by 2 commits.
-  (use "git push" to publish your local commits)
+Your branch is up to date with 'origin/main'.
 
 nothing to commit, working tree clean
 ```
@@ -35,15 +36,15 @@ nothing to commit, working tree clean
 
 ### Terminal Output:
 ```
-  bug-fix-revert ffe2ff6 Revert "Fix simple interest formula typo in README.md"
-  bug-fix-typo   468ed82 Fix simple interest formula typo in README.md
-* main           989b8d1 [origin/main: ahead 2] Complete Part 1 files and Part 2 submission evidence for Coursera final project
+  bug-fix-revert ffe2ff6 [origin/bug-fix-revert] Revert "Fix simple interest formula typo in README.md"
+  bug-fix-typo   468ed82 [origin/bug-fix-typo] Fix simple interest formula typo in README.md
+* main           7792208 [origin/main] Update Task 9 github-branches evidence with final clean status
 ```
 
 ---
 
 ## Branch Summary
-- `main`: Current active branch incorporating the merged typo fix (`468ed82`) and project completion commit (`989b8d1`). Working tree is clean.
-- `bug-fix-typo`: Dedicated branch created for resolving the simple interest formula typo (`468ed82`).
-- `bug-fix-revert`: Dedicated branch created for reverting the typo fix commit (`ffe2ff6`), prepared for pull request submission.
-- `remotes/origin/main`: Remote tracking branch from `ibm-developer-skills-network/mcino-Introduction-to-Git-and-GitHub`.
+- `main`: Current active branch incorporating the merged typo fix (`468ed82`), synced and up to date with `origin/main`.
+- `bug-fix-typo`: Dedicated branch for resolving simple interest formula typo, tracked remotely at `origin/bug-fix-typo`.
+- `bug-fix-revert`: Dedicated branch for reverting typo fix commit, tracked remotely at `origin/bug-fix-revert`.
+- `remotes/origin/*`: Remote tracking branches on GitHub repository `shravanishep/mcino-Introduction-to-Git-and-GitHub`.
