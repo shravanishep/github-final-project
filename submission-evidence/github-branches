@@ -23,8 +23,10 @@ Demonstrate branch names and their status in the repository using actual Git com
 ### Terminal Output:
 ```
 On branch main
-Your branch is ahead of 'origin/main' by 1 commit.
+Your branch is ahead of 'origin/main' by 2 commits.
   (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
 ```
 
 ---
@@ -35,13 +37,13 @@ Your branch is ahead of 'origin/main' by 1 commit.
 ```
   bug-fix-revert ffe2ff6 Revert "Fix simple interest formula typo in README.md"
   bug-fix-typo   468ed82 Fix simple interest formula typo in README.md
-* main           468ed82 [origin/main: ahead 1] Fix simple interest formula typo in README.md
+* main           989b8d1 [origin/main: ahead 2] Complete Part 1 files and Part 2 submission evidence for Coursera final project
 ```
 
 ---
 
 ## Branch Summary
-- `main`: Current active branch incorporating the merged typo fix (`468ed82`) and ahead of upstream `origin/main` by 1 commit.
+- `main`: Current active branch incorporating the merged typo fix (`468ed82`) and project completion commit (`989b8d1`). Working tree is clean.
 - `bug-fix-typo`: Dedicated branch created for resolving the simple interest formula typo (`468ed82`).
 - `bug-fix-revert`: Dedicated branch created for reverting the typo fix commit (`ffe2ff6`), prepared for pull request submission.
 - `remotes/origin/main`: Remote tracking branch from `ibm-developer-skills-network/mcino-Introduction-to-Git-and-GitHub`.
