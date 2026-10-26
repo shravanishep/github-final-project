@@ -30,7 +30,7 @@ This project adheres to the Contributor Covenant Code of Conduct. By participati
 - Fork the repository to your own GitHub account.
 - Clone your fork locally:
   ```bash
-  git clone https://github.com/<your-username>/mcino-Introduction-to-Git-and-GitHub.git
+  git clone https://github.com/<your-username>/github-final-project.git
   ```
 - Always create a new, descriptive branch from `main`:
   ```bash

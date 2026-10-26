@@ -1,5 +1,7 @@
 # Contributor Covenant Code of Conduct
 
+Topics: Our Pledge, Our Standards, Enforcement Responsibilities, Scope, Enforcement, Enforcement Guidelines, and Attribution.
+
 ## Our Pledge
 
 We as members, contributors, and leaders pledge to make participation in our
