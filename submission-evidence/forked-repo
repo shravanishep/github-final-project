@@ -1,0 +1,70 @@
+# Task 6 Evidence: forked-repo
+
+## Graded Objective
+Verify using `curl` and the GitHub REST API that your fork exists and is directly derived from `ibm-developer-skills-network/mcino-Introduction-to-Git-and-GitHub`.
+
+---
+
+## Status: PENDING REMOTE FORK CREATION
+The local project is fully prepared. As per the assignment instructions, no remote repository is created or modified without user confirmation.
+
+---
+
+## 1. Actual Verification Check Executed Locally
+
+### Command Executed:
+```bash
+curl.exe -s https://api.github.com/repos/shravanishep/mcino-Introduction-to-Git-and-GitHub
+```
+
+### Actual Terminal Output:
+```json
+{
+  "message": "Not Found",
+  "documentation_url": "https://docs.github.com/rest/repos/repos#get-a-repository",
+  "status": "404"
+}
+```
+
+*Note: The response confirms that the fork `shravanishep/mcino-Introduction-to-Git-and-GitHub` has not been created on GitHub yet.*
+
+---
+
+## 2. Steps to Create Your Fork on GitHub
+
+1. Open your browser and navigate to the upstream repository:
+   **https://github.com/ibm-developer-skills-network/mcino-Introduction-to-Git-and-GitHub**
+2. In the top-right corner of the page, click the **Fork** button.
+3. In the "Create a new fork" dialog:
+   - **Owner**: Select your account (`shravanishep`).
+   - **Repository name**: Keep the default `mcino-Introduction-to-Git-and-GitHub`.
+   - **Description**: Keep default or optional.
+   - **Copy the main branch only**: Uncheck this box (or leave checked, since both `main` and our custom branches will be pushed from local).
+4. Click **Create fork**.
+
+---
+
+## 3. Command to Run Once Fork is Created
+
+Run the following command in PowerShell or terminal to capture the final verified output:
+
+```bash
+curl.exe -s https://api.github.com/repos/shravanishep/mcino-Introduction-to-Git-and-GitHub
+```
+
+### Expected Output Fields Demonstrating Fork Relationship:
+```json
+{
+  "name": "mcino-Introduction-to-Git-and-GitHub",
+  "full_name": "shravanishep/mcino-Introduction-to-Git-and-GitHub",
+  "fork": true,
+  "parent": {
+    "full_name": "ibm-developer-skills-network/mcino-Introduction-to-Git-and-GitHub",
+    "html_url": "https://github.com/ibm-developer-skills-network/mcino-Introduction-to-Git-and-GitHub"
+  },
+  "source": {
+    "full_name": "ibm-developer-skills-network/mcino-Introduction-to-Git-and-GitHub",
+    "html_url": "https://github.com/ibm-developer-skills-network/mcino-Introduction-to-Git-and-GitHub"
+  }
+}
+```

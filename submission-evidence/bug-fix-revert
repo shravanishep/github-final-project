@@ -1,0 +1,94 @@
+# Task 8 Evidence: bug-fix-revert
+
+## Graded Objective
+Demonstrate creating a `bug-fix-revert` branch, reverting the previous commit, pushing it to the remote repository, and opening a Pull Request with verification via `curl` and the GitHub API.
+
+---
+
+## Status: PENDING REMOTE PULL REQUEST CREATION
+The local revert branch and commit are fully completed. The remote push and pull request creation will be executed once your GitHub fork is created.
+
+---
+
+## 1. Local Revert Git Commands Executed
+
+```bash
+git checkout -b bug-fix-revert
+git revert HEAD --no-edit
+```
+
+### Local Commit Created:
+- **Commit SHA**: `ffe2ff6`
+- **Commit Message**: `Revert "Fix simple interest formula typo in README.md"`
+- **Diff Stats**: `1 file changed, 1 insertion(+), 1 deletion(-)`
+- **Target Reverted Commit**: `468ed82` ("Fix simple interest formula typo in README.md")
+
+---
+
+## 2. Actual API Check Executed Locally
+
+### Command Executed:
+```bash
+curl.exe -s "https://api.github.com/repos/ibm-developer-skills-network/mcino-Introduction-to-Git-and-GitHub/pulls?head=shravanishep:bug-fix-revert&state=all"
+```
+
+### Actual Terminal Output:
+```json
+[
+
+]
+```
+
+*Note: The empty array confirms no pull request exists yet on GitHub for this branch.*
+
+---
+
+## 3. Steps to Push and Open Pull Request on GitHub
+
+Once your fork is created:
+1. Configure your origin remote:
+   ```bash
+   git remote set-url origin https://github.com/shravanishep/mcino-Introduction-to-Git-and-GitHub.git
+   ```
+2. Push your `bug-fix-revert` branch:
+   ```bash
+   git push -u origin bug-fix-revert
+   ```
+3. In GitHub, go to your repository page:
+   **https://github.com/shravanishep/mcino-Introduction-to-Git-and-GitHub**
+4. Click **Compare & pull request** next to `bug-fix-revert`.
+5. Set:
+   - **Base repository**: `ibm-developer-skills-network/mcino-Introduction-to-Git-and-GitHub` (or `shravanishep/mcino-Introduction-to-Git-and-GitHub`)
+   - **Base**: `main`
+   - **Head repository**: `shravanishep/mcino-Introduction-to-Git-and-GitHub`
+   - **Compare**: `bug-fix-revert`
+   - **Title**: `Bug fix revert`
+   - **Description**: `Reverts the simple interest formula change on bug-fix-revert branch for the Coursera Git and GitHub final project.`
+6. Click **Create pull request**.
+   *(Note: Upstream has an automated workflow that acknowledges and closes student PRs with a congratulatory message).*
+
+---
+
+## 4. Verification Command to Run Once PR is Created
+
+```bash
+curl.exe -s "https://api.github.com/repos/ibm-developer-skills-network/mcino-Introduction-to-Git-and-GitHub/pulls?head=shravanishep:bug-fix-revert&state=all"
+```
+
+### Expected Output Fields:
+```json
+[
+  {
+    "title": "Bug fix revert",
+    "state": "closed",
+    "head": {
+      "label": "shravanishep:bug-fix-revert",
+      "ref": "bug-fix-revert"
+    },
+    "base": {
+      "label": "ibm-developer-skills-network:main",
+      "ref": "main"
+    }
+  }
+]
+```

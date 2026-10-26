@@ -1,0 +1,35 @@
+# Task 7 Evidence: merge_branches
+
+## Graded Objective
+Demonstrate checking out the main branch and merging the bug-fix-typo branch, showing that the merge changed exactly one file.
+
+---
+
+## Executed Git Commands
+
+```bash
+git checkout main
+git merge bug-fix-typo
+```
+
+---
+
+## Actual Terminal Output
+
+```
+Switched to branch 'main'
+Updating ad95b0a..468ed82
+Fast-forward
+ README.md | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+```
+
+---
+
+## Verification Details
+
+1. **Source Base Commit**: `ad95b0a` (Upstream `ibm-developer-skills-network/mcino-Introduction-to-Git-and-GitHub` main branch commit: "Create close_pr.yml")
+2. **Branch Merged**: `bug-fix-typo` (Commit `468ed82`: "Fix simple interest formula typo in README.md")
+3. **Files Changed**: Exactly 1 file (`README.md`)
+4. **Diff Stats**: 1 insertion(+), 1 deletion(-)
+5. **Merge Strategy**: Fast-forward

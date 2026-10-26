@@ -1,0 +1,47 @@
+# Task 9 Evidence: github-branches
+
+## Graded Objective
+Demonstrate branch names and their status in the repository using actual Git commands executed in the local terminal.
+
+---
+
+## Command 1: git branch -a
+
+### Terminal Output:
+```
+  bug-fix-revert
+  bug-fix-typo
+* main
+  remotes/origin/HEAD -> origin/main
+  remotes/origin/main
+```
+
+---
+
+## Command 2: git status
+
+### Terminal Output:
+```
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+```
+
+---
+
+## Command 3: git branch -vv
+
+### Terminal Output:
+```
+  bug-fix-revert ffe2ff6 Revert "Fix simple interest formula typo in README.md"
+  bug-fix-typo   468ed82 Fix simple interest formula typo in README.md
+* main           468ed82 [origin/main: ahead 1] Fix simple interest formula typo in README.md
+```
+
+---
+
+## Branch Summary
+- `main`: Current active branch incorporating the merged typo fix (`468ed82`) and ahead of upstream `origin/main` by 1 commit.
+- `bug-fix-typo`: Dedicated branch created for resolving the simple interest formula typo (`468ed82`).
+- `bug-fix-revert`: Dedicated branch created for reverting the typo fix commit (`ffe2ff6`), prepared for pull request submission.
+- `remotes/origin/main`: Remote tracking branch from `ibm-developer-skills-network/mcino-Introduction-to-Git-and-GitHub`.
